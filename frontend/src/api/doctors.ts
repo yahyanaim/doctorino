@@ -63,3 +63,7 @@ export function listDoctors(params?: DoctorListParams): Promise<{ items: Doctor[
 export function getDoctor(id: string): Promise<Doctor> {
   return get(`/doctors/${id}`);
 }
+
+export function updateDoctorApproval(id: string, approvalStatus: string): Promise<Doctor> {
+  return patch(`/doctors/${id}/approval`, { approvalStatus });
+}
